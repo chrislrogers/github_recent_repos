@@ -9,9 +9,9 @@ function showRepos(name) {
     .then((data) => {
         RECENT_REPOS.innerHTML = '';
         for (let i = 0; i < data.length; i++) {
-            RECENT_REPOS.insertAdjacentHTML('beforeend', `<h3 id="project-name">${data[i].name}</h3><a id="project-url" href="${data[i].html_url}">Source Code</a>`);
+            RECENT_REPOS.insertAdjacentHTML('beforeend', `<h3 id="project-name">${data[i].name}</h3><a id="project-url" href="${data[i].html_url}" target="_blank">Source Code</a>`);
             if (data[i].homepage !== "" && data[i].homepage !== null) {
-                RECENT_REPOS.insertAdjacentHTML('beforeend',` <a id="project-live" href="${data[i].homepage}">Live</a>`);
+                RECENT_REPOS.insertAdjacentHTML('beforeend',` <a id="project-live" href="${data[i].homepage}" target="_blank">Live</a>`);
             }
         }
     })
