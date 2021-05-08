@@ -20,15 +20,16 @@ function showRepos(name) {
                 if (data[i].description !== null) {
                     cardHtml = cardHtml + ` <p>${data[i].description}</p>`;
                 }
+
                 cardHtml = cardHtml + `<br><div class="links">`;
                 cardHtml = cardHtml + `<a id="project-url" href="${data[i].html_url}" target="_blank">Source Code</a>`;
 
                 if (data[i].homepage !== "" && data[i].homepage !== null) {
                     cardHtml = cardHtml + ` <a id="project-live" href="${data[i].homepage}" target="_blank">Website</a>`;
-                }
-                else {
+                } else {
                     cardHtml = cardHtml + `<a class="no-link" href="#">Website</a>`;
                 }
+
                 cardHtml = cardHtml + `</div></div>`;
                 RECENT_REPOS.insertAdjacentHTML("beforeend", cardHtml);
             }
