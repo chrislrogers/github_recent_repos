@@ -9,17 +9,28 @@ function showRepos(name) {
     .then((data) => {
         RECENT_REPOS.innerHTML = '';
         for (let i = 0; i < data.length; i++) {
-            RECENT_REPOS.insertAdjacentHTML('beforeend', `<h3 id="project-name">${data[i].name}</h3>`);
-            
-            if (data[i].description !== null) {
-                RECENT_REPOS.insertAdjacentHTML('beforeend',` <p>${data[i].description}</p>`);
-            }
+            let cardHtml = `<div class="card">`;
+            let date = new Date(data[i].updated_at);
+            let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-            RECENT_REPOS.insertAdjacentHTML('beforeend',`<a id="project-url" href="${data[i].html_url}" target="_blank">Source Code</a>`);
+            cardHtml = cardHtml + `<h3 id="project-name">${data[i].name}</h3>`;
+            cardHtml = cardHtml + `<h5>Updated: ${date.toLocaleDateString('en-US', options)}</h5>`;
+            cardHtml = cardHtml + `<h4 id="project-language">${data[i].language}</h4>`;
+
+            if (data[i].description !== null) {
+                cardHtml = cardHtml + ` <p>${data[i].description}</p>`;
+            }
+            cardHtml = cardHtml + `<br><div class="links">`;
+            cardHtml = cardHtml + `<a id="project-url" href="${data[i].html_url}" target="_blank">Source Code</a>`;
             
             if (data[i].homepage !== "" && data[i].homepage !== null) {
-                RECENT_REPOS.insertAdjacentHTML('beforeend',` <a id="project-live" href="${data[i].homepage}" target="_blank">Live</a>`);
+                cardHtml = cardHtml + ` <a id="project-live" href="${data[i].homepage}" target="_blank">Live</a>`;
             }
+            else {
+                cardHtml = cardHtml + `<a class="no-link" href="#">Live</a>`;
+            }
+            cardHtml = cardHtml + `</div></div>`;
+            RECENT_REPOS.insertAdjacentHTML("beforeend", cardHtml);
         }
     })
 }
