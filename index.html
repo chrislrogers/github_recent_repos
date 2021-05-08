@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recent Repositories</title>
+</head>
+<body>
+    <section>
+        <h1># Recent Repositories</h1>
+        <h2>Find a user's ten most recently updated repos</h2>
+        <input type="text" id="input-word" placeholder="Github Username">
+        <button onclick="showRepos(document.getElementById('input-word').value)">Submit</button>
+        <div id="recent_repos">
+            <!-- Code injected by script.js -->
+        </div>
+    </section>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+</html>
