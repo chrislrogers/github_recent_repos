@@ -1,4 +1,5 @@
-const RECENT_REPOS = document.getElementById("recent_repos");
+const RECENT_REPOS = document.getElementById("recent-repos");
+const INPUT = document.getElementById("input-word");
 
 function showRepos(name) {
     let githubUser = name;
@@ -35,3 +36,9 @@ function showRepos(name) {
             }
         })
 }
+
+INPUT.addEventListener("keydown", function (event) {
+    if (event.code === "Enter") {
+        showRepos(event.target.value);
+    }
+});
