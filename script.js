@@ -17,7 +17,7 @@ function showRepos(name) {
 
                 cardHtml = cardHtml + `<h3 id="project-name">${data[i].name}</h3>`;
                 cardHtml = cardHtml + `<h5>Updated: ${updatedDate.toLocaleDateString('en-US', options)}</h5>`;
-                cardHtml = cardHtml + `<h6>Created: ${createdDate.toLocaleDateString('en-US', options)}</h6>`;
+                cardHtml = cardHtml + `<h5>Created: ${createdDate.toLocaleDateString('en-US', options)}</h5>`;
                 cardHtml = cardHtml + `<h4 id="project-language">${data[i].language}</h4>`;
 
                 if (data[i].description !== null) {

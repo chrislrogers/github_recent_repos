@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 html {
     height: 100%;
 }
@@ -79,7 +75,8 @@ h4 {
     font-weight: unset;
 }
 
-h5, h6 {
+h5 {
     color: lightslategrey;
     font-weight: unset;
+    margin: .7em;
 }
