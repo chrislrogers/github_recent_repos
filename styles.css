@@ -79,7 +79,7 @@ h4 {
     font-weight: unset;
 }
 
-h5 {
+h5, h6 {
     color: lightslategrey;
     font-weight: unset;
 }

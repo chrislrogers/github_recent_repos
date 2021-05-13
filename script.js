@@ -11,11 +11,13 @@ function showRepos(name) {
             RECENT_REPOS.innerHTML = '<!-- Code injected by script.js -->';
             for (let i = 0; i < data.length; i++) {
                 let cardHtml = `<div class="card">`;
-                let date = new Date(data[i].updated_at);
+                let updatedDate = new Date(data[i].updated_at);
+                let createdDate = new Date(data[i].created_at);
                 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
                 cardHtml = cardHtml + `<h3 id="project-name">${data[i].name}</h3>`;
-                cardHtml = cardHtml + `<h5>Updated: ${date.toLocaleDateString('en-US', options)}</h5>`;
+                cardHtml = cardHtml + `<h5>Updated: ${updatedDate.toLocaleDateString('en-US', options)}</h5>`;
+                cardHtml = cardHtml + `<h6>Created: ${createdDate.toLocaleDateString('en-US', options)}</h6>`;
                 cardHtml = cardHtml + `<h4 id="project-language">${data[i].language}</h4>`;
 
                 if (data[i].description !== null) {
