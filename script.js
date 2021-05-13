@@ -3,7 +3,7 @@ const INPUT = document.getElementById("input-word");
 
 function showRepos(name) {
     let githubUser = name;
-    let githubApiUrl = 'https://api.github.com/users/' + githubUser + '/repos?per_page=10';
+    let githubApiUrl = 'https://api.github.com/users/' + githubUser + '/repos?sort=updated&per_page=10';
 
     fetch(githubApiUrl)
         .then((response) => response.json())
